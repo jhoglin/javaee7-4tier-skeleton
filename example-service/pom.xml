@@ -10,4 +10,24 @@
 		<relativePath>..</relativePath>
 	</parent>
 
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-ejb-plugin</artifactId>
+				<configuration>
+					<filterDeploymentDescriptor>true</filterDeploymentDescriptor>
+					<ejbVersion>3.0</ejbVersion>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${skeleton.java-version}</source>
+					<target>${skeleton.java-version}</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
 </project>

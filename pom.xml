@@ -13,6 +13,10 @@
 		<module>example-backend</module>
 		<module>example-frontend</module>
 	</modules>
+	
+	<properties>
+		<skeleton.java-version>1.8</skeleton.java-version>
+	</properties>
 
 	<dependencies>
 		<dependency>
@@ -22,5 +26,18 @@
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${skeleton.java-version}</source>
+					<target>${skeleton.java-version}</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>
