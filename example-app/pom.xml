@@ -55,13 +55,13 @@
 							<groupId>${project.groupId}</groupId>
 							<artifactId>example-backend</artifactId>
 							<bundleFileName>example-backend.war</bundleFileName>
-							<contextRoot>/myWarConext</contextRoot>
+							<contextRoot>/api</contextRoot>
 						</webModule>
 						<webModule>
 							<groupId>${project.groupId}</groupId>
 							<artifactId>example-frontend</artifactId>
 							<bundleFileName>example-frontend.war</bundleFileName>
-							<contextRoot>/myWarConext</contextRoot>
+							<contextRoot>/</contextRoot>
 						</webModule>
 					</modules>
 					<displayName>${project.name}</displayName>

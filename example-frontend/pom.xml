@@ -13,11 +13,9 @@
 	<build>
 		<plugins>
 			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
+				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
-					<source>${skeleton.java-version}</source>
-					<target>${skeleton.java-version}</target>
-					<encoding>UTF-8</encoding>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
 		</plugins>

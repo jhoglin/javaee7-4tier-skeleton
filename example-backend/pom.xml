@@ -13,6 +13,12 @@
 	<build>
 		<plugins>
 			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
 					<source>${skeleton.java-version}</source>
@@ -22,5 +28,15 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+	<dependencies>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>example-service</artifactId>
+			<version>${project.version}</version>
+			<type>ejb</type>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
 
 </project>
