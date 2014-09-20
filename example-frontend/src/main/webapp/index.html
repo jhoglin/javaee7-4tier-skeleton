@@ -1,10 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" ng-app="exampleApp">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Example Frontend</title>
+
+<!-- Bootstrap -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="stylesheet"
+	href="css/main.css">
+
+<script
+	src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+<script src="js/main.js"></script>
+
 </head>
-<body>
+<body ng-controller="MainController">
+	<div class="container">
+		<div class="page-header">
+			<h1>Example Frontend</h1>
+		</div>
+
+		<div class="col-sm-6">
+			<div class="list-group">
+				<a class="list-group-item" ng-repeat="item in items" ng-click="remove(item.id)">
+					<span class="label label-default"># {{ item.id }}</span>
+					{{ item.text }}
+				</a>
+			</div>
+		</div>
+
+		<div class="col-sm-6">
+			<form role="form" ng-submit="submit()">
+				<div class="form-group">
+					<label for="input-text">Text</label> <input id="input-text"
+						class="form-control" ng-model="form.text">
+				</div>
+				<input type="submit" class="btn btn-primary">
+			</form>
+
+		</div>
+
+	</div>
 
 </body>
 </html>

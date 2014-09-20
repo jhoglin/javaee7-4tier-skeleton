@@ -30,4 +30,9 @@ public class ExampleService {
 
 	}
 
+	public void delete(int id) {
+		data.remove(id);
+
+	}
+
 }
