@@ -64,6 +64,7 @@
 							<contextRoot>/</contextRoot>
 						</webModule>
 					</modules>
+					<skinnyWars>true</skinnyWars>
 					<displayName>${project.name}</displayName>
 					<generateApplicationXml>true</generateApplicationXml>
 				</configuration>

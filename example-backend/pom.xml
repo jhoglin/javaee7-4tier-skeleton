@@ -37,6 +37,11 @@
 			<type>ejb</type>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.owlike</groupId>
+			<artifactId>genson</artifactId>
+			<version>1.0</version>
+		</dependency>
 	</dependencies>
 
 </project>
