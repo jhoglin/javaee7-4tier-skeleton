@@ -32,6 +32,7 @@
 									<arg value="install"></arg>
 								</exec>
 								<exec executable="grunt">
+									<arg value="-v"></arg>
 								</exec>
 							</target>
 						</configuration>
