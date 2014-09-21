@@ -13,9 +13,36 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<phase>compile</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<inherited>false</inherited>
+						<configuration>
+							<target>
+								<exec executable="npm">
+									<arg value="install"></arg>
+								</exec>
+								<exec executable="bower">
+									<arg value="install"></arg>
+								</exec>
+								<exec executable="grunt">
+								</exec>
+							</target>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<warSourceDirectory>${project.build.directory}/webapp</warSourceDirectory>
 				</configuration>
 			</plugin>
 			<plugin>
