@@ -1,6 +1,6 @@
 var exampleApp = angular.module('exampleApp', []);
 
-exampleApp.controller("MainController", function($scope, $http) {
+exampleApp.controller("MainController", ['$scope', '$http', function($scope, $http) {
 	
 	
 	$scope.submit = submit;
@@ -32,4 +32,4 @@ exampleApp.controller("MainController", function($scope, $http) {
 		
 	}
 
-});
+}]);
