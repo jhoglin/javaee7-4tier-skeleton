@@ -1,12 +1,16 @@
 module.exports = function(grunt) {
 	grunt.initConfig({
-		pkg: grunt.file.readJSON('package.json'),
-		bowerPath: 'bower_components/',
-		sourcePath: 'src/main/webapp/',
-		targetPath: 'target/webapp/',
-		banner: '<%= pkg.name %> <%= pkg.version %> (<%= grunt.template.today("yyyy-mm-dd") %>)',
+		app : {
+			version: grunt.option('app-version') || grunt.fail.fatal("Missing option '--app-version'."),
+			name: grunt.option('app-name') || grunt.fail.fatal("Missing option '--app-name'."),
+		},
+		
+		bowerPath: 'app/bower_components/',
+		sourcePath: 'webapp-src/',
+		targetPath: 'webapp-dist/',
+		banner: '<%= app.name %> <%= app.version %> (<%= grunt.template.today("yyyy-mm-dd") %>)',
 		clean: ["<%= targetPath %>"],
-		basename: '<%= targetPath %><%= pkg.name %>-<%= pkg.version %>',
+		basename: '<%= targetPath %><%= app.name %>-<%= app.version %>',
 
 		uglify : {
 			options: {

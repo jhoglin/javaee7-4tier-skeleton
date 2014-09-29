@@ -25,14 +25,30 @@
 						<inherited>false</inherited>
 						<configuration>
 							<target>
-								<exec executable="npm">
+								<copy todir="target/webapp-src">
+									<fileset dir="src/main/webapp" />
+								</copy>
+
+								<!-- npm dependencies -->
+								<copy file="src/build/package.json" todir="target/" />
+								<exec dir="target/" executable="npm">
 									<arg value="install"></arg>
 								</exec>
-								<exec executable="bower">
+
+								<!-- bower assets -->
+								<copy file="src/build/bower.json" todir="target/" />
+								<exec dir="target/" executable="node_modules/.bin/bower">
 									<arg value="install"></arg>
 								</exec>
-								<exec executable="grunt">
+
+								<!-- grunt build -->
+								<copy file="src/build/Gruntfile.js" todir="target/" />
+								<exec dir="target/" executable="node_modules/.bin/grunt">
 									<arg value="-v"></arg>
+									<arg value="--app-name"></arg>
+									<arg value="${project.artifactId}"></arg>
+									<arg value="--app-version"></arg>
+									<arg value="${project.version}"></arg>
 								</exec>
 							</target>
 						</configuration>
@@ -43,7 +59,7 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
-					<warSourceDirectory>${project.build.directory}/webapp</warSourceDirectory>
+					<warSourceDirectory>${project.build.directory}/webapp-dist</warSourceDirectory>
 				</configuration>
 			</plugin>
 			<plugin>
